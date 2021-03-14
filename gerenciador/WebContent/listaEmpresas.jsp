@@ -12,13 +12,21 @@
 </head>
 <body>
 
+	<c:if test="${not empty empresa}">
+		<p>Empresa ${empresa} cadastrada com sucesso!</p>
+	</c:if>
+
 	<h1>Empresas Cadastradas</h1>
 
 	<ul>
 		<c:forEach items="${lista}" var="empresa">
 
-			<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" var="data"/>
-			<li>${empresa.nome} - ${data}</li>
+			<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"
+				var="data" />
+			<li>${empresa.nome}-${data} 
+				<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">Edita</a>
+				<a href="/gerenciador/removeEmpresa?id=${empresa.id}">Remove</a>
+			</li>
 
 		</c:forEach>
 	</ul>
