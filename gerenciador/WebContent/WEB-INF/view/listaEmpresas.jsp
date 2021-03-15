@@ -2,7 +2,7 @@
 	import="java.util.List, br.com.alura.gerenciador.modelo.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<c:url value="/novaEmpresa" var="linkNovaEmpresa"/>
+<c:url value="/formNovaEmpresa" var="linkNovaEmpresa"/>
 
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
 		</c:forEach>
 	</ul>
 	
-	<a href="formNovaEmpresa.jsp">Cadastrar Empresa</a>
+	<a href="entrada?acao=formNovaEmpresa">Cadastrar Empresa</a>
 
 </body>
 </html>
