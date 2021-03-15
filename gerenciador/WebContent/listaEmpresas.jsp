@@ -1,7 +1,8 @@
 <%@ page
-	import="java.util.List, br.com.alura.gerenciador.servlet.Empresa"%>
+	import="java.util.List, br.com.alura.gerenciador.modelo.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<c:url value="/novaEmpresa" var="linkNovaEmpresa"/>
 
 
 <!DOCTYPE html>
@@ -24,12 +25,14 @@
 			<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"
 				var="data" />
 			<li>${empresa.nome} - ${data} 
-				<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">Edita</a>
-				<a href="/gerenciador/removeEmpresa?id=${empresa.id}">Remove</a>
+				<a href="/gerenciador/entrada?acao=mostraEmpresa&id=${empresa.id}">Edita</a>
+				<a href="/gerenciador/entrada?acao=removeEmpresa&id=${empresa.id}">Remove</a>
 			</li>
 
 		</c:forEach>
 	</ul>
+	
+	<a href="formNovaEmpresa.jsp">Cadastrar Empresa</a>
 
 </body>
 </html>
