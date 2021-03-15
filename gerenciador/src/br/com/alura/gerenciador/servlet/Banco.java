@@ -22,6 +22,10 @@ public class Banco {
 		lista.add(e2);
 	}
 
+	public static List<Empresa> getLista() {
+		return Banco.lista;
+	}
+	
 	public void add(Empresa empresa) {
 		empresa.setId(Banco.chaveSequencial++);
 		Banco.lista.add(empresa);
@@ -29,19 +33,24 @@ public class Banco {
 	}
 
 	public void remove(Integer id) {
-		
+
 		Iterator<Empresa> it = lista.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Empresa e = it.next();
-			if(e.getId() == id) {
+			if (e.getId() == id) {
 				it.remove();
 				System.out.println("Empresa " + e.getNome() + ", removida com sucesso!");
 			}
 		}
 	}
 
-	public static List<Empresa> getLista() {
-		return Banco.lista;
+	public Empresa mostra(Integer id) {
+		for (Empresa empresa : lista) {
+			if (empresa.getId() == id) {
+				System.out.println(empresa.getNome());
+				return empresa;
+			}
+		}
+		return null;
 	}
-
 }

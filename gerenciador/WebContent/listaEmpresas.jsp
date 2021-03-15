@@ -23,7 +23,7 @@
 
 			<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"
 				var="data" />
-			<li>${empresa.nome}-${data} 
+			<li>${empresa.nome} - ${data} 
 				<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">Edita</a>
 				<a href="/gerenciador/removeEmpresa?id=${empresa.id}">Remove</a>
 			</li>
