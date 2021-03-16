@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
-public class AlteraEmpresa {
+public class AlteraEmpresa implements Acao {
 	
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -38,7 +38,7 @@ public class AlteraEmpresa {
 		
 		System.out.println("Ação Altera Empresa " + id);
 		
-		return "redirect:entrada?acao=listaEmpresas";
+		return "redirect:entrada?acao=ListaEmpresas";
 	}
 
 }
