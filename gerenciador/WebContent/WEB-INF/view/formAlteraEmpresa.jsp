@@ -10,19 +10,19 @@
 <title>Formulário Altera de Empresas</title>
 </head>
 <body>
+	<c:import url="logout-parcial.jsp" />
+
 	<form action="${linkNovaEmpresa}" method="post">
-	
-		<input type="hidden" name="id" value="${empresa.id}">
-		<input type="hidden" name="acao" value="AlteraEmpresa">
-		
-		Nome: <input type="text" name="nome" value="${empresa.nome}">
-		<br><br>
-		
-		<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" var="data"/>
-		Data: <input type="text" name="data" value="${data}">
-		<br><br>
-		
-		<input type="submit" value="Alterar">
+
+		<input type="hidden" name="id" value="${empresa.id}"> <input
+			type="hidden" name="acao" value="AlteraEmpresa"> Nome: <input
+			type="text" name="nome" value="${empresa.nome}"> <br>
+		<br>
+
+		<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"
+			var="data" />
+		Data: <input type="text" name="data" value="${data}"> <br>
+		<br> <input type="submit" value="Alterar">
 	</form>
 </body>
 </html>

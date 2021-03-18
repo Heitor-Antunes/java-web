@@ -13,12 +13,12 @@
 </head>
 <body>
 
-	<form action="link" method="post">
+	<form action="${link}" method="post">
 	
 		Login <input type="text" name="login">
-		Senha <input type="text" name="senha">
+		Senha <input type="password" name="senha">
 		
-		<input type="submit" value="Logar">
+		<input type="submit" name="acao" value="Login">
 
 	</form>
 </body>

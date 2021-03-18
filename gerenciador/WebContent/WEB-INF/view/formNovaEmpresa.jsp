@@ -9,15 +9,14 @@
 <title>Formulário Cadastro de Empresas</title>
 </head>
 <body>
+	<c:import url="logout-parcial.jsp" />
+
 	<form action="${linkNovaEmpresa}" method="post">
-		
-		<input type="hidden" name="acao" value="NovaEmpresa">
-	
-		Nome: <input type="text" name="nome">
-		<br><br>
-		Data: <input type="text" name="data">
-		<br><br>
-		<input type="submit" value="Cadastrar">
+
+		<input type="hidden" name="acao" value="NovaEmpresa"> Nome: <input
+			type="text" name="nome"> <br>
+		<br> Data: <input type="text" name="data"> <br>
+		<br> <input type="submit" value="Cadastrar">
 	</form>
 </body>
 </html>
