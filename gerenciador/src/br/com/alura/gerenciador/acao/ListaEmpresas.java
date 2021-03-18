@@ -11,26 +11,18 @@ import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
 public class ListaEmpresas implements Acao {
-	
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		long antes = System.currentTimeMillis();
-		
+
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		System.out.println("Ação Listando Empresas");
-		
+
 		Banco banco = new Banco();
 		List<Empresa> listaEmpresas = banco.getLista();
-		
+
 		request.setAttribute("lista", listaEmpresas);
-		
-		long depois = System.currentTimeMillis();
-		
-		
-		System.out.println(depois);
-		System.out.println(antes);		
-		System.out.println("Tempo de execução: " + (depois - antes) + " milisegundos");
-		
+
 		return "forward:listaEmpresas.jsp";
-	} 
+	}
 
 }
